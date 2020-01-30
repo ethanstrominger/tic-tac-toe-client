@@ -1,17 +1,18 @@
 
 
-#board {
+.row {
    position: relative;
    display: flex;
    flex-wrap: wrap;
-   margin: 2vw
+   margin: 0;
 }
 
 .cell {
   border-color: black
   border-width: 2px;
-  font-size: 30vw;
+  font-size: 30vmin;
   padding: 0 2vw;
+  margin: 0;
   text-align: center;
 }
 
