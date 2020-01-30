@@ -5,7 +5,9 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-
+const store = require('./store.js')
 $(() => {
-  // your JS code goes here
+  store.currentPlayer = 'X'
+  const gameEvents = require('./games/events')
+  $('.cell').on('click', gameEvents.onClick)
 })
