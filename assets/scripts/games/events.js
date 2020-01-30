@@ -8,7 +8,7 @@ const onClick = (event) => {
   event.preventDefault()
   const cell = event.target
   const isX = (store.currentPlayer === 'X')
-  store.currentPlayer = (isX ? 'O' : 'X')
+  store.currentPlayer = ( isX ? 'O' : 'X')
   $(cell).text(store.currentPlayer)
   console.log(cell)
   console.log(store.currentPlayer)
