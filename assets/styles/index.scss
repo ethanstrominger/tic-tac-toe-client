@@ -1,17 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
 
-// #board {
-//   position: relative;
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin: 2vw
-// }
-$line-color: black;
+$border-color: #000;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  position: relative;
+}
 
 .cell {
-  border-color: $line-color;
+  border-color: $border-color;
   border-width: 2px;
-  font-size: 30vw;
+  font-size: 30vmin;
+  margin: 0;
   padding: 0 2vw;
   text-align: center;
 }
