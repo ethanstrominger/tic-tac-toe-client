@@ -9,7 +9,7 @@ const onSignUpSuccess = function (response) {
 }
 
 const onSignUpFail = function (response) {
-  $('#message').text(response.user.email + 'failed')
+  $('#message').text('Failed')
 
   console.log(response)
 }
@@ -22,6 +22,7 @@ const onSignInSuccess = function (response) {
 }
 
 const onSignInFail = function (response) {
+  console.log("Failed")
   $('#message').text(response.user.email + 'sign in failed')
 
   console.log(response)

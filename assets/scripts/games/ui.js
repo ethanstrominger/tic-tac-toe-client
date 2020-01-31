@@ -74,12 +74,8 @@ const getWinner = () => {
 
 const onClickSuccess = function (cell) {
   const isX = (store.currentPlayer === 'X')
-  store.currentPlayer = (isX ? 'O' : 'X')
   $(cell).text(store.currentPlayer)
-  console.log(cell)
-  console.log(getCellArray())
-  console.log(store.currentPlayer)
-  console.log('Winner is ' + getWinner())
+  store.currentPlayer = (isX ? 'O' : 'X')
 }
 
 const onClickFail = function (response) {

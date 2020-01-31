@@ -7,14 +7,9 @@ const onSignUp = (event) => {
   event.preventDefault()
   const form = event.target
   const signInData = getFormFields(form)
-  console.log('XXXXX', signInData)
   api.signUp(signInData)
-    .then((response) => {
-      ui.onSignUpSuccess(response)
-    })
-    .catch((response) => {
-      ui.onSignUpFail(response)
-    })
+    .then(ui.onSignUpSuccess)
+    .catch(ui.onSignUpFail)
 }
 
 const onSignIn = (event) => {
