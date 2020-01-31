@@ -14,8 +14,8 @@ const onSignInSuccess = function (response) {
   $('#message').text(response.user.email + 'successfully signed in')
   // $('#sign-in').trigger('reset')
   store.user = response.user
-  console.log('Response',response)
-  console.log('User ',store.user)
+  console.log('Response', response)
+  console.log('User ', store.user)
 }
 
 const onSignInFail = function (response) {

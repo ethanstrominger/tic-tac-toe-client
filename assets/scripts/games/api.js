@@ -1,13 +1,41 @@
 'use strict'
 // const store = require('./../store.js')
+const apiUrls = require('./../config.js')
+const store = require('./../store.js')
 
-const clickCell = () => {
-  // return $.ajax({
-  //   url: apiUrls.apiUrl + '/sign-up',
-  //   method: 'POST',
-  //   data: data
+const move = (cell) => {
+  const id = $(cell).attr('id')
+  const index = 0 + id.substr(-1, 1)
+  return $.ajax({
+    url: apiUrls.apiUrl + '/games/' + store.game.id,
+    headers: {
+      Authorization: `Token  token=${store.user.token}`
+    },
+    method: 'PATCH',
+    data: {
+      game: {
+        cell: {
+          index: index,
+          value: store.currentPlayer.toLowerCase()
+        },
+        over: false
+      }
+    }
+  })
+}
+
+const startNewGame = () => {
+  console.log('XXXXXXX')
+  return $.ajax({
+    url: apiUrls.apiUrl + '/games',
+    headers: {
+      Authorization: `Token  token=${store.user.token}`
+    },
+    method: 'POST'
+  })
 }
 
 module.exports = {
-  clickCell
+  startNewGame,
+  move
 }

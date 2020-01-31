@@ -69,11 +69,13 @@ const getWinner = () => {
   return winner
 }
 
-const onClickSuccess = function (cell) {
+const onClickSuccess = function (response, cell) {
+  console.log('O C S', response)
   const isX = (store.currentPlayer === 'X')
   $(cell).text(store.currentPlayer)
   store.currentPlayer = (isX ? 'O' : 'X')
   const winner = getWinner()
+  console.log('Game state', response)
   if (winner !== 'None') {
     $('#message').text('Winner is ' + winner)
   }
@@ -83,7 +85,19 @@ const onClickFail = function (response) {
   console.log('***** Fail')
 }
 
+const onStartNewGameSuccess = function (response) {
+  $('#message').text('Started new game')
+  store.game = response.game
+}
+
+const onStartNewGameFail = function (response) {
+  console.log(response)
+  $('#message').text('Failed to start new game')
+}
+
 module.exports = {
   onClickSuccess,
-  onClickFail
+  onClickFail,
+  onStartNewGameSuccess,
+  onStartNewGameFail
 }
