@@ -16,14 +16,9 @@ const onSignIn = (event) => {
   event.preventDefault()
   const form = event.target
   const signInData = getFormFields(form)
-  console.log('XXXXX', signInData)
   api.signIn(signInData)
-    .then((response) => {
-      ui.onSignInSuccess(response)
-    })
-    .catch((response) => {
-      ui.onSignInFail(response)
-    })
+    .then(ui.onSignInSuccess)
+    .catch(ui.onSignInFail)
 }
 
 const onChangePw = (event) => {
@@ -31,23 +26,15 @@ const onChangePw = (event) => {
   const form = event.target
   const signInData = getFormFields(form)
   api.changePw(signInData)
-    .then((response) => {
-      ui.onChangePwSuccess(response)
-    })
-    .catch((response) => {
-      ui.onChangePwFail(response)
-    })
+    .then(ui.onChangePwSuccess)
+    .catch(ui.onChangePwFail)
 }
 
 const onSignOut = (event) => {
   event.preventDefault()
   api.signOut()
-    .then((response) => {
-      ui.onSignOutSuccess(response)
-    })
-    .catch((response) => {
-      ui.onSignOutFail(response)
-    })
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFail)
 }
 
 module.exports = {

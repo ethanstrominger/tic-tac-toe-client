@@ -2,35 +2,29 @@
 const store = require('./../store')
 
 const onSignUpSuccess = function (response) {
-  console.log('****** Success')
   $('#message').text(response.user.email + 'successfully signed up')
   $('#sign-up').trigger('reset')
-  console.log(response)
 }
 
 const onSignUpFail = function (response) {
   $('#message').text('Failed')
-
-  console.log(response)
 }
 
 const onSignInSuccess = function (response) {
   $('#message').text(response.user.email + 'successfully signed in')
-  $('#sign-up').trigger('reset')
+  // $('#sign-in').trigger('reset')
   store.user = response.user
-  console.log(store)
+  console.log('Response',response)
+  console.log('User ',store.user)
 }
 
 const onSignInFail = function (response) {
-  console.log("Failed")
-  $('#message').text(response.user.email + 'sign in failed')
-
-  console.log(response)
+  $('#message').text('Sign in failed')
 }
 
 const onChangePwSuccess = function (response) {
   $('#message').text('successfully changed pw')
-  $('#sign-up').trigger('reset')
+  $('#change-password').trigger('reset')
 }
 
 const onChangePwFail = function (response) {
@@ -40,8 +34,9 @@ const onChangePwFail = function (response) {
 }
 
 const onSignOutSuccess = function (response) {
+  console.log('XXXXXXX')
   $('#message').text('successfully signed out')
-  $('#sign-up').trigger('reset')
+  $('#sign-out').trigger('reset')
 }
 
 const onSignOutFail = function (response) {

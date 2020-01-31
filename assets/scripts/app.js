@@ -11,5 +11,7 @@ $(() => {
   const gameEvents = require('./games/events')
   $('.cell').on('click', gameEvents.onClick)
   $('#sign-up').on('submit', authEvents.onSignUp)
-
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePw)
+  $('#sign-out').on('submit', authEvents.onSignOut)
 })

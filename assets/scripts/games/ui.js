@@ -10,7 +10,6 @@ const getCellArray = () => {
 }
 
 const getWinnerForValues = (value1, value2, value3) => {
-  console.log(value1,value2,value3)
   if (value1 !== '' && value1 === value2 && value2 === value3) {
     return value1
   } else {
@@ -21,7 +20,6 @@ const getSingleRowWinner = (cellArray, rowStart) => {
   const value1 = cellArray[rowStart]
   const value2 = cellArray[rowStart + 1]
   const value3 = cellArray[rowStart + 2]
-  console.log ('Row',rowStart,value1,value2,value3)
   return getWinnerForValues(value1, value2, value3)
 }
 
@@ -30,7 +28,6 @@ const getSingleColumnWinner = (cellArray, colStart) => {
   const value2 = cellArray[colStart + 3]
   const value3 = cellArray[colStart + 6]
   // console.log ('Col',colStart,'*',value1,'*',value2,'*',value3)
-  console.log(cellArray)
   return getWinnerForValues(value1, value2, value3)
 }
 
@@ -76,6 +73,10 @@ const onClickSuccess = function (cell) {
   const isX = (store.currentPlayer === 'X')
   $(cell).text(store.currentPlayer)
   store.currentPlayer = (isX ? 'O' : 'X')
+  const winner = getWinner()
+  if (winner !== 'None') {
+    $('#message').text('Winner is ' + winner)
+  }
 }
 
 const onClickFail = function (response) {
