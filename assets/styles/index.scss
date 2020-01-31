@@ -12,10 +12,12 @@ $border-color: #000;
 .cell {
   border-color: $border-color;
   border-width: 2px;
-  font-size: 30vmin;
+  font-size: 20vmin;
+  height: 30vmin;
   margin: 0;
   padding: 0 2vw;
   text-align: center;
+  width: 30vmin;
 }
 
 .column-left {
