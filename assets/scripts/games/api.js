@@ -5,7 +5,7 @@ const store = require('./../store.js')
 
 const move = (cell) => {
   const id = $(cell).attr('id')
-  const index = 0 + id.substr(-1, 1)
+  const index = id.substr(-1, 1)
   return $.ajax({
     url: apiUrls.apiUrl + '/games/' + store.game.id,
     headers: {

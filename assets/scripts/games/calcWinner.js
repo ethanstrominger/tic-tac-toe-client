@@ -1,11 +1,3 @@
-const getCellArray = () => {
-  const retArray = []
-  for (let i = 0; i < 9; i++) {
-    retArray.push($('#cell' + i).text())
-  }
-  return retArray
-}
-
 const getWinnerForValues = (value1, value2, value3) => {
   if (value1 !== '' && value1 === value2 && value2 === value3) {
     return value1
@@ -54,8 +46,7 @@ const getAnyDiaganolWinner = (cellArray) => {
   return winner
 }
 
-const getWinner = () => {
-  const cellArray = getCellArray()
+const getWinner = (cellArray) => {
   let winner = getAnyRowWinner(cellArray)
   if (winner === 'None') {
     winner = getAnyColumnWinner(cellArray)

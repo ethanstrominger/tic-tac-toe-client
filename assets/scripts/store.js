@@ -4,7 +4,7 @@ const store = {
   token: undefined,
   user: undefined,
   board: {
-    cellArray: {},
+    cellArray: ['', '', '', '', '', '', '', '', ''],
     player: undefined,
     winner: 'None'
   }

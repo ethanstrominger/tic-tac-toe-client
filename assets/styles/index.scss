@@ -7,6 +7,8 @@ $border-color: #000;
 }
 
 .row {
+  align-content: center;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   margin: 0;
