@@ -3,6 +3,18 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
+const onClickSignUp = (event) => {
+  ui.gotoSignUpScreen()
+}
+
+const onClickSignIn = (event) => {
+  ui.gotoSignInScreen()
+}
+
+const onClickChangePassword = (event) => {
+  ui.gotoChangePasswordScreen()
+}
+
 const onSignUp = (event) => {
   event.preventDefault()
   const form = event.target
@@ -30,7 +42,7 @@ const onChangePw = (event) => {
     .catch(ui.onChangePwFail)
 }
 
-const onSignOut = (event) => {
+const onClickSignOut = (event) => {
   event.preventDefault()
   api.signOut()
     .then(ui.onSignOutSuccess)
@@ -41,5 +53,8 @@ module.exports = {
   onSignUp,
   onSignIn,
   onChangePw,
-  onSignOut
+  onClickSignOut,
+  onClickSignIn,
+  onClickSignUp,
+  onClickChangePassword
 }

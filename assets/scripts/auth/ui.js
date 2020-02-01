@@ -1,6 +1,31 @@
 'use strict'
 const store = require('./../store')
 
+const hideScreens = () => {
+  $('#sign-in-form').hide()
+  $('#sign-up-form').hide()
+  $('#change-password-form').hide()
+  $('#board').hide()
+}
+
+const gotoSignUpScreen = () => {
+  hideScreens()
+  $('#sign-up-form').removeAttr('display')
+  $('#sign-up-form').show()
+}
+
+const gotoSignInScreen = () => {
+  hideScreens()
+  $('#sign-in-form').removeAttr('display')
+  $('#sign-in-form').show()
+}
+
+const gotoChangePasswordScreen = () => {
+  hideScreens()
+  $('#change-password-form').removeAttr('display')
+  $('#change-password-form').show()
+}
+
 const onSignUpSuccess = function (response) {
   $('#message').text(response.user.email + 'successfully signed up')
   $('#sign-up').trigger('reset')
@@ -52,5 +77,8 @@ module.exports = {
   onChangePwFail,
   onChangePwSuccess,
   onSignOutSuccess,
-  onSignOutFail
+  onSignOutFail,
+  gotoSignInScreen,
+  gotoSignUpScreen,
+  gotoChangePasswordScreen
 }
