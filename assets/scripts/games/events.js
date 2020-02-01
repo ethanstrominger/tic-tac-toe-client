@@ -6,11 +6,13 @@ const ui = require('./ui')
 const onClick = (event) => {
   event.preventDefault()
   const cell = event.target
-  api.move(cell)
-    .then(response => {
-      ui.onClickSuccess(response, cell)
-    })
-    .catch(ui.onClickFail)
+  if (ui.okayToClick(cell)) {
+    api.move(cell)
+      .then(response => {
+        ui.onClickSuccess(response, cell)
+      })
+      .catch(ui.onClickFail)
+  }
 }
 
 const onStartNewGame = (event) => {

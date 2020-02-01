@@ -9,8 +9,7 @@ const gameEvents = require('./games/events.js')
 // require('./example')
 const store = require('./store.js')
 $(() => {
-  store.currentPlayer = 'X'
-  const gameEvents = require('./games/events')
+  store.board.player = 'x'
   $('.cell').on('click', gameEvents.onClick)
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)

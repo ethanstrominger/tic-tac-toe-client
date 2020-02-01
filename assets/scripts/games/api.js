@@ -16,7 +16,7 @@ const move = (cell) => {
       game: {
         cell: {
           index: index,
-          value: store.currentPlayer.toLowerCase()
+          value: store.board.player.toLowerCase()
         },
         over: false
       }

@@ -10,17 +10,21 @@ $border-color: #000;
   display: flex;
   flex-wrap: wrap;
   margin: 0;
+  padding: 0;
   position: relative;
 }
 
 .cell {
+  align-content: center;
+  align-items: center;
   border-color: $border-color;
   border-width: 2px;
   font-size: 20vmin;
   height: 25vmin;
   margin: 0;
-  padding: 0 2vw;
+  padding: 0;
   text-align: center;
+  text-transform: capitalize;
   width: 25vmin;
 }
 
