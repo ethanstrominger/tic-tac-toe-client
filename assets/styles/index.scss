@@ -1,11 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
-$border-color: #000;
+$color-cell-border: #000; // black
+$color-hover-cell: #ffc0cb; // pink
 
-button {
-  font-size: 30px;
-  padding: 5px;
-}
+// button,
+// [type='submit'] {
+//   : 'btn btn-primary';
+//   // font-size: 30px;
+//   // padding: 5px;
+// }
 
 .view {
   padding: 6vw;
@@ -22,7 +25,7 @@ button {
 }
 
 .cell {
-  border-color: $border-color;
+  border-color: $color-cell-border;
   border-width: 2px;
   font-size: 20vmin;
   height: 25vmin;
@@ -31,7 +34,12 @@ button {
   text-align: center;
   text-transform: capitalize;
   width: 25vmin;
+
+  :hover {
+    background-color: $color-hover-cell;
+  }
 }
+
 
 .column-left {
   border-right-style: solid;
