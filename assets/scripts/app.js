@@ -21,5 +21,5 @@ $(() => {
   $('#sign-in-button').on('click', authUi.gotoSignInScreen)
   $('#sign-out-button').on('click', authEvents.onClickSignOut)
   $('#change-password-button').on('click', authUi.gotoChangePasswordScreen)
-  $('#play-game-button').on('click', gameEvents.onClickNewGame)
+  $('#play-game-button').on('click', gameEvents.onStartNewGame)
 })

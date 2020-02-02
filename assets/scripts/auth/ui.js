@@ -9,7 +9,7 @@ const gotoSignUpScreen = () => {
 
 const gotoSignInScreen = () => {
   commonUi.hideScreens()
-  commonUi.showScreen('#sigin-in-form')
+  commonUi.showScreen('#sign-in-form')
 }
 
 const gotoChangePasswordScreen = () => {
