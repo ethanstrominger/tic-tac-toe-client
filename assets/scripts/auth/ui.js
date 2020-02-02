@@ -18,16 +18,16 @@ const gotoChangePasswordScreen = () => {
 }
 
 const onSignUpSuccess = function (response) {
-  $('#message').text(response.user.email + 'successfully signed up')
+  commonUi.showMessage(response.user.email + 'successfully signed up')
   $('#sign-up').trigger('reset')
 }
 
 const onSignUpFail = function (response) {
-  $('#message').text('Failed')
+  commonUi.showError('Sign up failed', response)
 }
 
 const onSignInSuccess = function (response) {
-  $('#message').text(response.user.email + 'successfully signed in')
+  commonUi.showMessage(response.user.email + 'successfully signed in')
   // $('#sign-in').trigger('reset')
   store.user = response.user
   $('#buttons-when-signed-out').hide()
@@ -37,31 +37,30 @@ const onSignInSuccess = function (response) {
 }
 
 const onSignInFail = function (response) {
-  $('#message').text('Sign in failed')
+  commonUi.showError('Sign in failed', response)
 }
 
 const onChangePwSuccess = function (response) {
-  $('#message').text('successfully changed pw')
+  commonUi.showMessage('successfully changed pw')
   $('#change-password').trigger('reset')
 }
 
 const onChangePwFail = function (response) {
-  $('#message').text('Change pw failed')
+  commonUi.showError('Change pw failed', response)
 
   console.log(response)
 }
 
 const onSignOutSuccess = function (response) {
   console.log('XXXXXXX')
-  $('#message').text('successfully signed out')
+  commonUi.showMessage('successfully signed out')
   $('#sign-out').trigger('reset')
   commonUi.hideScreens()
   commonUi.showScreen('#buttons-when-signed-out')
 }
 
 const onSignOutFail = function (response) {
-  $('#message').text('failed to sign out')
-  console.log(response)
+  commonUi.showError('failed to sign out', response)
 }
 
 module.exports = {

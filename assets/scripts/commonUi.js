@@ -10,7 +10,17 @@ const showScreen = (screen) => {
   $(screen).show()
 }
 
+const showMessage = (message) => {
+  $('#message').text(message)
+}
+
+const showError = (message, response) => {
+  $('#message').text(message)
+}
+
 module.exports = {
   hideScreens,
-  showScreen
+  showScreen,
+  showMessage,
+  showError
 }

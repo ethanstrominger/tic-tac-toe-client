@@ -14,30 +14,27 @@ const onClickSuccess = function (response, cell) {
   const id = $(cell).attr('id')
   const index = id.substr(-1, 1)
   store.board.cellArray[index] = store.board.player
-  console.log(store.board.cellArray)
   const isX = (store.board.player === 'x')
-  console.log('Was ' + store.board.player)
   store.board.player = (isX ? 'o' : 'x')
-  console.log('Now ' + store.board.player)
   const winner = getWinner(store.board.cellArray)
   if (winner !== 'None') {
-    $('#message').text('Winner is ' + winner)
+    commonUi.showMessage('Winner is ' + winner)
   }
   store.board.winner = winner
 }
 
 const onClickFail = function (response) {
-  console.log('***** Fail')
+  commonUi.showError('Move failed', response)
 }
 
 const onStartNewGameSuccess = function (response) {
-  $('#message').text('Started new game')
+  commonUi.showMessage('Started new game')
   store.game = response.game
   commonUi.showScreen('#board')
 }
 
 const onStartNewGameFail = function (response) {
-  $('#message').text('Failed to start new game')
+  commonUi.showError('Failed to start new game', response)
 }
 
 module.exports = {

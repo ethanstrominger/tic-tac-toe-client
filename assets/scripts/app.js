@@ -24,6 +24,7 @@ const _setupButtonStyle = () => {
   const items = $('button, [type=submit]')
   $(items).addClass('btn btn-primary btn-large')
 }
+
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const store = require('./store.js')
