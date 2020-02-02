@@ -1,6 +1,7 @@
 'use strict'
 const store = require('./../store')
 const calcWinner = require('./calcWinner.js')
+const commonUi = require('./../commonUi.js')
 const getWinner = calcWinner.getWinner
 
 const okayToClick = (cell) => {
@@ -32,10 +33,10 @@ const onClickFail = function (response) {
 const onStartNewGameSuccess = function (response) {
   $('#message').text('Started new game')
   store.game = response.game
+  commonUi.showScreen('#board')
 }
 
 const onStartNewGameFail = function (response) {
-  console.log(response)
   $('#message').text('Failed to start new game')
 }
 
