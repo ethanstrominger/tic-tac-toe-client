@@ -15,7 +15,7 @@ I created a list of tasks, mostly based on what was given in class, and executed
 ![Wire frame](wireframe.jpg)
 
 # Test Plan
-See [Test Plan (file: TESTS.md)](TESTS.md)
+See [Test Plan (file: TESTS.md)](./TESTS.md)
 
 # Problem Solving
 For problem solving:
