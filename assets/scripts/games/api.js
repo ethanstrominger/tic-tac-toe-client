@@ -1,7 +1,10 @@
 'use strict'
 // const store = require('./../store.js')
-const config = require('./../config.js')
-const store = require('./../store.js')
+const config = require('./../config')
+const store = require('./../store')
+const commonApi = require('./../commonApi')
+
+const getGames = () => commonApi.ajaxCall('GET', 'games', undefined, true)
 
 const move = (cell) => {
   const id = $(cell).attr('id')
@@ -37,5 +40,6 @@ const startNewGame = () => {
 
 module.exports = {
   startNewGame,
-  move
+  move,
+  getGames
 }

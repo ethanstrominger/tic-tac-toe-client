@@ -18,6 +18,7 @@ const _setupEventListeners = () => {
   $('#sign-out-button').on('click', authEvents.onClickSignOut)
   $('#change-password-button').on('click', authUi.gotoChangePasswordScreen)
   $('#play-game-button').on('click', gameEvents.onStartNewGame)
+  $('#get-stats-button').on('click', gameEvents.onGetStats)
 }
 
 const _setupButtonStyle = () => {

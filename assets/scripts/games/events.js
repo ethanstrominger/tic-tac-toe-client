@@ -23,6 +23,13 @@ const setGameState = (cell) => {
   }
 }
 
+const onGetStats = (event) => {
+  event.preventDefault()
+  api.getGames()
+    .then(ui.onGetStatsSuccess)
+    .catch(ui.onGetStatsFail)
+}
+
 const onClick = (event) => {
   event.preventDefault()
   const cell = event.target
@@ -30,9 +37,7 @@ const onClick = (event) => {
   if (ui.okayToClick(cell)) {
     // const over = checkOver(cell)
     api.move(cell)
-      .then(response => {
-        ui.onClickSuccess(response, cell)
-      })
+      .then(response => ui.onClickSuccess(response, cell))
       .catch(ui.onClickFail)
   }
 }
@@ -46,5 +51,6 @@ const onStartNewGame = (event) => {
 
 module.exports = {
   onClick,
-  onStartNewGame
+  onStartNewGame,
+  onGetStats
 }
