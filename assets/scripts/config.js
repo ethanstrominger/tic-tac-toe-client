@@ -11,7 +11,6 @@ if (window.location.hostname === 'localhost') {
 } else {
   apiUrl = config.production
 }
-console.log('URL', apiUrl)
 
 module.exports = {
   apiUrl

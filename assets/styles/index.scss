@@ -11,6 +11,10 @@ $form-border-color: #000; // black
 //   // padding: 5px;
 // }
 
+* {
+  font-size: 24px;
+}
+
 .view {
   padding: 6vw;
 }
@@ -36,6 +40,7 @@ $form-border-color: #000; // black
   border-width: 2px;
   font-size: 20vmin;
   height: 25vmin;
+  justify-content: center;
   margin: 0;
   padding: 0;
   text-align: center;

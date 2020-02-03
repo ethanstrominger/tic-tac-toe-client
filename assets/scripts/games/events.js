@@ -10,7 +10,7 @@ const setGameState = (cell) => {
   const id = $(cell).attr('id')
   const index = id.substr(-1, 1)
   store.proposedBoard = lodash.cloneDeep(store.currentBoard)
-  console.log(store.proposedBoard)
+  // console.log(store.proposedBoard)
   store.proposedBoard.cellArray[index] = store.proposedBoard.player
   const winner = calcWinner.getWinner(store.proposedBoard.cellArray)
   store.proposedBoard.winner = winner

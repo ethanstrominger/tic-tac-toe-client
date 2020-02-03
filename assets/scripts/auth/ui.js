@@ -48,11 +48,11 @@ const onChangePwSuccess = function (response) {
 const onChangePwFail = function (response) {
   commonUi.showError('Change pw failed', response)
 
-  console.log(response)
+  // console.log(response)
 }
 
 const onSignOutSuccess = function (response) {
-  console.log('XXXXXXX')
+  // console.log('XXXXXXX')
   commonUi.showMessage('successfully signed out')
   $('#sign-out').trigger('reset')
   commonUi.hideScreens()

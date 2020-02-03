@@ -28,7 +28,7 @@ const move = (cell) => {
 }
 
 const startNewGame = () => {
-  console.log('XXXXXXX')
+  // console.log('XXXXXXX')
   return $.ajax({
     url: config.apiUrl + '/games',
     headers: {

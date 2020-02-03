@@ -42,7 +42,7 @@ const onGetStatsSuccess = (response) => {
 
 const onGetStatsFail = (response) => {
   commonUi.showError('Get stats failed', response)
-  console.log('Failed')
+  // console.log('Failed')
 }
 
 const onClickSuccess = (response, cell) => {
@@ -50,7 +50,7 @@ const onClickSuccess = (response, cell) => {
   $(cell).text(store.currentBoard.player)
   const isX = (store.currentBoard.player === 'x')
   store.currentBoard.player = (isX ? 'o' : 'x')
-  console.log('Here', store.currentBoard)
+  // console.log('Here', store.currentBoard)
   if (store.currentBoard.winner !== 'None') {
     commonUi.showMessage('Winner is ' + store.currentBoard.winner)
   }
@@ -60,9 +60,23 @@ const onClickFail = function (response) {
   commonUi.showError('Move failed', response)
 }
 
+const _initCurrentBoard = () => {
+  store.currentBoard =
+    { cellArray: ['', '', '', '', '', '', '', '', ''],
+      player: 'x',
+      winner: 'None'
+    }
+}
+
+const _setCellsToBlank = () => {
+  $('.cell').text('')
+}
+
 const onStartNewGameSuccess = function (response) {
   commonUi.showMessage('Started new game')
   store.game = response.game
+  _setCellsToBlank()
+  _initCurrentBoard()
   commonUi.hideScreens()
   commonUi.showScreen('#board')
 }
