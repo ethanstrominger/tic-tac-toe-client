@@ -1,8 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 
-$color-cell-border: #000; // black
-$color-hover-cell: #ffc0cb; // pink
+$cell-border-color: #000; // black
+// $hover-cell-color: #ffc0cb; // pink
 $form-border-color: #000; // black
+$board-top-border-color: #0000ff;
 
 // button,
 // [type='submit'] {
@@ -16,13 +17,41 @@ $form-border-color: #000; // black
 }
 
 .view {
-  padding: 6vw;
+  padding: 0;
+  margin: 0;
+}
+
+.info {
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.button {
+  margin: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.board {
+  margin: 20px;
+}
+
+.home {
+  margin: 0;
+  padding: 0;
 }
 
 .form {
   border-color:  $form-border-color;
   border-style: solid;
   border-width: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
 }
 
 .row {
@@ -36,7 +65,7 @@ $form-border-color: #000; // black
 }
 
 .cell {
-  border-color: $color-cell-border;
+  border-color: $cell-border-color;
   border-width: 2px;
   font-size: 20vmin;
   height: 25vmin;

@@ -53,6 +53,8 @@ const onClickSuccess = (response, cell) => {
   // console.log('Here', store.currentBoard)
   if (store.currentBoard.winner !== 'None') {
     commonUi.showMessage('Winner is ' + store.currentBoard.winner)
+  } else if (store.currentBoard.over) {
+    commonUi.showMessage('Game is a tie')
   }
 }
 
@@ -78,6 +80,7 @@ const onStartNewGameSuccess = function (response) {
   _setCellsToBlank()
   _initCurrentBoard()
   commonUi.hideScreens()
+  $('h1').hide()
   commonUi.showScreen('#board')
 }
 

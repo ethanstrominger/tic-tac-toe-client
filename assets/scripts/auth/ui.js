@@ -18,8 +18,9 @@ const gotoChangePasswordScreen = () => {
 }
 
 const onSignUpSuccess = function (response) {
-  commonUi.showMessage(response.user.email + 'successfully signed up')
-  $('#sign-up').trigger('reset')
+  commonUi.showMessage(response.user.email + ' successfully signed up')
+  $('#sign-up-form').trigger('reset')
+  $('#sign-up-form').hide()
 }
 
 const onSignUpFail = function (response) {
@@ -27,7 +28,7 @@ const onSignUpFail = function (response) {
 }
 
 const onSignInSuccess = function (response) {
-  commonUi.showMessage(response.user.email + 'successfully signed in')
+  commonUi.showMessage(response.user.email + ' successfully signed in')
   // $('#sign-in').trigger('reset')
   store.user = response.user
   $('#buttons-when-signed-out').hide()
@@ -41,8 +42,9 @@ const onSignInFail = function (response) {
 }
 
 const onChangePwSuccess = function (response) {
-  commonUi.showMessage('successfully changed pw')
-  $('#change-password').trigger('reset')
+  commonUi.showMessage('Successfully changed password')
+  $('#change-password-form').trigger('reset')
+  $('#change-password-form').hide()
 }
 
 const onChangePwFail = function (response) {
@@ -53,10 +55,10 @@ const onChangePwFail = function (response) {
 
 const onSignOutSuccess = function (response) {
   // console.log('XXXXXXX')
-  commonUi.showMessage('successfully signed out')
-  $('#sign-out').trigger('reset')
+  commonUi.showMessage('Successfully signed out')
   commonUi.hideScreens()
-  $('#sign-out').hide()
+  $('#buttons-when-signed-in').hide()
+  $('#h1').show()
   commonUi.showScreen('#buttons-when-signed-out')
 }
 

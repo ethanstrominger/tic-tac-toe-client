@@ -11,10 +11,14 @@ const showScreen = (screen) => {
 }
 
 const showMessage = (message) => {
+  $('#message').css('background-color', 'green')
+  $('#message').css('color', 'white')
   $('#message').text(message)
 }
 
 const showError = (message, response) => {
+  $('#message').css('background-color', 'red')
+  $('#message').css('color', 'white')
   $('#message').text(message)
 }
 
