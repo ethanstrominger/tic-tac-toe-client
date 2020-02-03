@@ -16,9 +16,9 @@ const move = (cell) => {
       game: {
         cell: {
           index: index,
-          value: store.board.player.toLowerCase()
+          value: store.proposedBoard.player.toLowerCase()
         },
-        over: false
+        over: store.proposedBoard.over
       }
     }
   })

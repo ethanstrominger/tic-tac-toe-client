@@ -29,7 +29,7 @@ const _setupButtonStyle = () => {
 // require('./example')
 const store = require('./store.js')
 $(() => {
-  store.board.player = 'x'
+  store.currentBoard.player = 'x'
   _setupEventListeners()
   _setupButtonStyle()
 })

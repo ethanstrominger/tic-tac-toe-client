@@ -1,26 +1,21 @@
 'use strict'
 const store = require('./../store')
-const calcWinner = require('./calcWinner.js')
 const commonUi = require('./../commonUi.js')
-const getWinner = calcWinner.getWinner
+const lodash = require('lodash')
 
 const okayToClick = (cell) => {
-  return $(cell).text() === '' && store.board.winner === 'None'
+  return $(cell).text() === '' && store.currentBoard.winner === 'None'
 }
 
 const onClickSuccess = function (response, cell) {
-  console.log('Game state', response)
-  $(cell).text(store.board.player)
-  const id = $(cell).attr('id')
-  const index = id.substr(-1, 1)
-  store.board.cellArray[index] = store.board.player
-  const isX = (store.board.player === 'x')
-  store.board.player = (isX ? 'o' : 'x')
-  const winner = getWinner(store.board.cellArray)
-  if (winner !== 'None') {
-    commonUi.showMessage('Winner is ' + winner)
+  store.currentBoard = lodash.cloneDeep(store.proposedBoard)
+  $(cell).text(store.currentBoard.player)
+  const isX = (store.currentBoard.player === 'x')
+  store.currentBoard.player = (isX ? 'o' : 'x')
+  console.log('Here', store.currentBoard)
+  if (store.currentBoard.winner !== 'None') {
+    commonUi.showMessage('Winner is ' + store.currentBoard.winner)
   }
-  store.board.winner = winner
 }
 
 const onClickFail = function (response) {

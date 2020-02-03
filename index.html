@@ -17,8 +17,8 @@
       <div id="home">
         <div id="buttons-when-signed-out" class="view">
           <p>To play, requires you sign in.  If you have not created an account, sign up.</p>
-          <button id="sign-in-button">Sign In</button>
-          <button id="sign-up-button">Sign Up</button>
+          <button id="sign-in-button" class="btn btn-primary">Sign In</button>
+          <button id="sign-up-button" class="btn btn-primary">Sign Up</button>
         </div>
         <div id="buttons-when-signed-in" style="display: None" class="view">
           <p>Click on New Game to play new game.</p>
@@ -34,27 +34,28 @@
         <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
         <label for="password_confirmation">Confirm Password</label>
         <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm password">
-        <input type="submit" value="Sign Up">
+        <input type="submit" value="Sign Up" class="btn btn-primary">
       </form>
       <form id="sign-in-form" class="view form" style="display: none">
         <label for="email">Email</label>
         <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
         <label for="password">Password</label>
         <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
-        <input type="submit" value="Sign In">
+        <input type="submit" value="Sign In" class="btn btn-primary">
       </form>
       <form id="change-password-form" class="view form" style="display: None">
         <label for="old">Old Password</label>
         <input name="passwords[old]" type="password" class="form-control" placeholder="Enter old password">
         <label for="new">New Password</label>
         <input name="passwords[new]" type="password" class="form-control" placeholder="Enter new password">
-        <input type="submit" value="Change Password">
+        <input type="submit" value="Change Password" class="btn btn-primary">
       </form>
       <div id="message" class="view"></div>
+      <p class="cellx">Click on blank square to move.</p>
       <div id="board" class="board view" style="display: None">
-        <p>Click on blank square to move.</p>
+        <p class="cellx">Click on blank square to move.</p>
         <div class="row">
-          <div id="cell0" class="cell row-top column-left">x</div>
+          <div id="cell0" class="cell row-top column-left"></div>
           <div id="cell1" class="cell row-top"></div>
           <div id="cell2" class="cell row-top column-right"></div>
         </div>
