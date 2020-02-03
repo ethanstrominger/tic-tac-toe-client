@@ -2,6 +2,7 @@
 
 $color-cell-border: #000; // black
 $color-hover-cell: #ffc0cb; // pink
+$form-border-color: #000; // black
 
 // button,
 // [type='submit'] {
@@ -12,6 +13,12 @@ $color-hover-cell: #ffc0cb; // pink
 
 .view {
   padding: 6vw;
+}
+
+.form {
+  border-color:  $form-border-color;
+  border-style: solid;
+  border-width: 3px;
 }
 
 .row {
@@ -34,12 +41,7 @@ $color-hover-cell: #ffc0cb; // pink
   text-align: center;
   text-transform: capitalize;
   width: 25vmin;
-
-  :hover {
-    background-color: $color-hover-cell;
-  }
 }
-
 
 .column-left {
   border-right-style: solid;

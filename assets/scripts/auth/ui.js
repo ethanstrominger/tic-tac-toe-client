@@ -32,7 +32,7 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('#buttons-when-signed-out').hide()
   // no need to hide screens as all screens will be hidden
-  // commonUi.hideScreens()
+  commonUi.hideScreens()
   commonUi.showScreen('#buttons-when-signed-in')
 }
 
@@ -56,6 +56,7 @@ const onSignOutSuccess = function (response) {
   commonUi.showMessage('successfully signed out')
   $('#sign-out').trigger('reset')
   commonUi.hideScreens()
+  $('#sign-out').hide()
   commonUi.showScreen('#buttons-when-signed-out')
 }
 

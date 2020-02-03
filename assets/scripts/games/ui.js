@@ -30,6 +30,7 @@ const onClickFail = function (response) {
 const onStartNewGameSuccess = function (response) {
   commonUi.showMessage('Started new game')
   store.game = response.game
+  commonUi.hideScreens()
   commonUi.showScreen('#board')
 }
 
