@@ -1,15 +1,15 @@
 'use strict'
 
 let apiUrl
-const apiUrls = {
-  production: '<replace-with-heroku-url>',
-  development: 'http://localhost:4741'
+const config = {
+  development: 'https://tic-tac-toe-wdi.herokuapp.com',
+  production: 'https://tic-tac-toe-wdi-production.herokuapp.com'
 }
 
 if (window.location.hostname === 'localhost') {
-  apiUrl = apiUrls.development
+  apiUrl = config.development
 } else {
-  apiUrl = apiUrls.production
+  apiUrl = config.production
 }
 
 module.exports = {

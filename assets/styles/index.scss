@@ -1,1 +1,94 @@
 @import '~bootstrap/scss/bootstrap';
+
+$cell-border-color: #000; // black
+// $hover-cell-color: #ffc0cb; // pink
+$form-border-color: #000; // black
+$board-top-border-color: #0000ff;
+
+// button,
+// [type='submit'] {
+//   : 'btn btn-primary';
+//   // font-size: 30px;
+//   // padding: 5px;
+// }
+
+* {
+  font-size: 24px;
+}
+
+.view {
+  padding: 0;
+  margin: 0;
+}
+
+.info {
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.button {
+  margin: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.board {
+  margin: 20px;
+}
+
+.home {
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  border-color:  $form-border-color;
+  border-style: solid;
+  border-width: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.row {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.cell {
+  border-color: $cell-border-color;
+  border-width: 2px;
+  font-size: 20vmin;
+  height: 25vmin;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: capitalize;
+  width: 25vmin;
+}
+
+.column-left {
+  border-right-style: solid;
+}
+
+.column-right {
+  border-left-style: solid;
+}
+
+.row-top {
+  border-bottom-style: solid;
+}
+
+.row-bottom {
+  border-top-style: solid;
+}
