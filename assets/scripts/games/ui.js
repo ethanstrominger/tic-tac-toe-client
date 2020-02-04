@@ -55,6 +55,8 @@ const onClickSuccess = (response, cell) => {
     commonUi.showMessage('Winner is ' + store.currentBoard.winner)
   } else if (store.currentBoard.over) {
     commonUi.showMessage('Game is a tie')
+  } else {
+    commonUi.showMessage(`Now, it is ${store.currentBoard.player}'s turn.`)
   }
 }
 
@@ -75,7 +77,7 @@ const _setCellsToBlank = () => {
 }
 
 const onStartNewGameSuccess = function (response) {
-  commonUi.showMessage('Started new game')
+  commonUi.showMessage('To start game, click on any cell.')
   store.game = response.game
   _setCellsToBlank()
   _initCurrentBoard()

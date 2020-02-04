@@ -58,6 +58,7 @@ const onSignOutSuccess = function (response) {
   commonUi.showMessage('Successfully signed out')
   commonUi.hideScreens()
   $('#buttons-when-signed-in').hide()
+  $('#stats').hide()
   $('#h1').show()
   commonUi.showScreen('#buttons-when-signed-out')
 }
