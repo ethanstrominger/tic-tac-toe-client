@@ -19,6 +19,7 @@ const _setupEventListeners = () => {
   $('#change-password-button').on('click', authUi.gotoChangePasswordScreen)
   $('#play-game-button').on('click', gameEvents.onStartNewGame)
   $('#get-stats-button').on('click', gameEvents.onGetStats)
+  $('#game-list-button').on('click', gameEvents.onGetGameList)
 }
 
 // use require without a reference to ensure a file is bundled

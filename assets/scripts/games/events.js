@@ -30,7 +30,16 @@ const onGetStats = (event) => {
     .catch(ui.onGetStatsFail)
 }
 
+const onGetGameList = (event) => {
+  console.log('Here')
+  event.preventDefault()
+  api.getGames()
+    .then(ui.onGetGameListSuccess)
+    .catch(ui.onGetGameListFail)
+}
+
 const onClick = (event) => {
+  console.log('In onClick')
   event.preventDefault()
   const cell = event.target
   setGameState(cell)
@@ -52,5 +61,6 @@ const onStartNewGame = (event) => {
 module.exports = {
   onClick,
   onStartNewGame,
-  onGetStats
+  onGetStats,
+  onGetGameList
 }
