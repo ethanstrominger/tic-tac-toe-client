@@ -5,7 +5,7 @@ const store = require('./../store')
 const commonApi = require('./../commonApi')
 
 const getGames = () => {
-  console.log('In getgames')
+  // console.log('In getgames')
   return commonApi.ajaxCall('GET', 'games', undefined, true)
 }
 

@@ -24,6 +24,7 @@ const setGameState = (cell) => {
 }
 
 const onGetStats = (event) => {
+  // console.log('onGetStats')
   event.preventDefault()
   api.getGames()
     .then(ui.onGetStatsSuccess)
@@ -31,7 +32,7 @@ const onGetStats = (event) => {
 }
 
 const onGetGameList = (event) => {
-  console.log('Here')
+  // console.log('Here')
   event.preventDefault()
   api.getGames()
     .then(ui.onGetGameListSuccess)
@@ -39,7 +40,7 @@ const onGetGameList = (event) => {
 }
 
 const onClick = (event) => {
-  console.log('In onClick')
+  // console.log('In onClick')
   event.preventDefault()
   const cell = event.target
   setGameState(cell)

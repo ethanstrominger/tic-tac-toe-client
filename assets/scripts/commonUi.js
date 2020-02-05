@@ -1,4 +1,6 @@
 const hideScreens = () => {
+  $('#stats').hide()
+  $('#game-list').hide()
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#change-password-form').hide()

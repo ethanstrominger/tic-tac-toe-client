@@ -1,6 +1,6 @@
 'use strict'
 const store = require('./../store')
-const commonUi = require('./../commonUi.js')
+const commonUi = require('./../commonUi')
 const lodash = require('lodash')
 const calcWinner = require('./calcWinner')
 
@@ -9,11 +9,11 @@ const okayToClick = (cell) => {
 }
 
 const restartGame = (event) => {
-  console.log('Game hello', event.target)
+  // console.log('Game hello', event.target)
   const cellIndex = $(event.target).attr('id').substr(9)
-  console.log(store.games)
-  console.log(cellIndex)
-  console.log(store.games[cellIndex])
+  // console.log(store.games)
+  // console.log(cellIndex)
+  // console.log(store.games[cellIndex])
   commonUi.showMessage('To start game, click on any cell.')
   _setCellsToBlank()
   _initCurrentBoard()
@@ -39,7 +39,9 @@ const restartGame = (event) => {
 }
 
 const onGetGameListSuccess = (response) => {
+  // console.log('Here')
   const games = response.games
+  // console.log(games)
   let html = '<table>'
   for (let rowCounter = 0; rowCounter < games.length; rowCounter++) {
     const game = games[rowCounter]
@@ -68,14 +70,16 @@ const onGetGameListSuccess = (response) => {
       }
     }
     miniBoardHtml += '</table>'
-    console.log(miniBoardHtml)
+    // console.log(miniBoardHtml)
     html += `<tr id=game${game.id}><td><a href="#" class="game-link"` +
            `id=game-row-${rowCounter}>` +
            `Game: ${game.id}</a></td><td>${phrase}</td><td>${miniBoardHtml}</td></tr>`
   }
   html = html + '</table>'
-  console.log('html', html)
+  // console.log('html', html)
+  $('#board').hide()
   commonUi.showScreen('#list-of-games')
+
   $('#list-of-games').html(html)
   $('.game-link').on('click', restartGame)
   store.games = games
@@ -87,7 +91,9 @@ const onGetGameListFail = (response) => {
 }
 
 const onGetStatsSuccess = (response) => {
+  // console.log('onGetStatsSuccess')
   const games = response.games
+  // console.log(games)
   const stats = {
     xwins: 0,
     owins: 0,
@@ -116,7 +122,8 @@ const onGetStatsSuccess = (response) => {
   if (stats.unfinished > 0) {
     message = message + ` In Progress: ${stats.unfinished}`
   }
-  commonUi.showScreen('#list-of-games')
+  // console.log('message', message)
+  commonUi.showScreen('#stats')
   $('#stats').text(message)
   store.games = games
 }
@@ -127,7 +134,7 @@ const onGetStatsFail = (response) => {
 }
 
 const onClickSuccess = (response, cell) => {
-  console.log('On Click Success')
+  // console.log('On Click Success')
   store.currentBoard = lodash.cloneDeep(store.proposedBoard)
   $(cell).text(store.currentBoard.player)
   const isX = (store.currentBoard.player === 'x')
