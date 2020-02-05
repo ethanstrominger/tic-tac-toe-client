@@ -43,9 +43,10 @@ const onGetGameListSuccess = (response) => {
   let html = '<table>'
   for (let rowCounter = 0; rowCounter < games.length; rowCounter++) {
     const game = games[rowCounter]
+    const cellArray = game.cells
     let phrase
     if (game.over) {
-      const winner = calcWinner.getWinner(game.cells)
+      const winner = calcWinner.getWinner(cellArray)
       if (winner === 'x') {
         phrase = 'X wins'
       } else if (winner === 'o') {
@@ -56,8 +57,21 @@ const onGetGameListSuccess = (response) => {
     } else {
       phrase = 'In progress'
     }
-    html = html + `<tr id=game${game.id}><td><a href="#" class="game-link" id=game-row-${rowCounter}>` +
-           `Game: ${game.id}</a></td><td>${phrase}</td></tr>`
+    let miniBoardHtml = '<table style="min-width: 2px; min-height: 20px; max-width: 20px; max-height: 2px; padding 0; margin: 0">'
+    for (let i = 0; i < cellArray.length; i++) {
+      if (i % 3 === 0) {
+        miniBoardHtml += '<tr>'
+      }
+      miniBoardHtml += `<td>${cellArray[i]}</td>`
+      if (i % 3 === 2) {
+        miniBoardHtml += '</tr>'
+      }
+    }
+    miniBoardHtml += '</table>'
+    console.log(miniBoardHtml)
+    html += `<tr id=game${game.id}><td><a href="#" class="game-link"` +
+           `id=game-row-${rowCounter}>` +
+           `Game: ${game.id}</a></td><td>${phrase}</td><td>${miniBoardHtml}</td></tr>`
   }
   html = html + '</table>'
   console.log('html', html)
