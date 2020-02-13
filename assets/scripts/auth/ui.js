@@ -4,22 +4,24 @@ const commonUi = require('./../commonUi')
 
 const gotoSignUpScreen = () => {
   commonUi.hideScreens()
+  $('#sign-up-form').trigger('reset')
   commonUi.showScreen('#sign-up-form')
 }
 
 const gotoSignInScreen = () => {
   commonUi.hideScreens()
+  $('#sign-in-form').trigger('reset')
   commonUi.showScreen('#sign-in-form')
 }
 
 const gotoChangePasswordScreen = () => {
   commonUi.hideScreens()
+  $('#change-password-form').trigger('reset')
   commonUi.showScreen('#change-password-form')
 }
 
 const onSignUpSuccess = function (response) {
   commonUi.showMessage(response.user.email + ' successfully signed up')
-  $('#sign-up-form').trigger('reset')
   $('#sign-up-form').hide()
 }
 

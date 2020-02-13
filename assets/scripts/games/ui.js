@@ -42,6 +42,27 @@ const onGetGameListSuccess = (response) => {
   // console.log('Here')
   const games = response.games
   // console.log(games)
+  let html
+  if (games.length === 0) {
+    html = '<p>No games</p>'
+  } else {
+    html = getDynamicGameListHtml
+  }
+  // console.log('html', html)
+  $('#board').hide()
+  commonUi.showScreen('#list-of-games')
+
+  $('#list-of-games').html(html)
+  $('.game-link').on('click', restartGame)
+  store.games = games
+}
+
+const onGetGameListFail = (response) => {
+  commonUi.showError('Game list failed', response)
+  // console.log('Failed')
+}
+
+const getDynamicGameListHtml => {
   let html = '<table>'
   for (let rowCounter = 0; rowCounter < games.length; rowCounter++) {
     const game = games[rowCounter]
@@ -76,18 +97,7 @@ const onGetGameListSuccess = (response) => {
            `Game: ${game.id}</a></td><td>${phrase}</td><td>${miniBoardHtml}</td></tr>`
   }
   html = html + '</table>'
-  // console.log('html', html)
-  $('#board').hide()
-  commonUi.showScreen('#list-of-games')
-
-  $('#list-of-games').html(html)
-  $('.game-link').on('click', restartGame)
-  store.games = games
-}
-
-const onGetGameListFail = (response) => {
-  commonUi.showError('Game list failed', response)
-  // console.log('Failed')
+  return html
 }
 
 const onGetStatsSuccess = (response) => {
