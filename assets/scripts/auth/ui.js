@@ -23,10 +23,12 @@ const gotoChangePasswordScreen = () => {
 const onSignUpSuccess = function (response) {
   commonUi.showMessage(response.user.email + ' successfully signed up')
   $('#sign-up-form').hide()
+  $('#sign-up-form').trigger('reset')
 }
 
 const onSignUpFail = function (response) {
   commonUi.showError('Sign up failed', response)
+  $('#sign-up-form').trigger('reset')
 }
 
 const onSignInSuccess = function (response) {
@@ -37,10 +39,12 @@ const onSignInSuccess = function (response) {
   // no need to hide screens as all screens will be hidden
   commonUi.hideScreens()
   commonUi.showScreen('#buttons-when-signed-in')
+  $('#sign-in-form').trigger('reset')
 }
 
 const onSignInFail = function (response) {
   commonUi.showError('Sign in failed', response)
+  $('#sign-in-form').trigger('reset')
 }
 
 const onChangePwSuccess = function (response) {
