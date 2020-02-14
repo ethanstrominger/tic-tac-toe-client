@@ -46,7 +46,7 @@ const onGetGameListSuccess = (response) => {
   if (games.length === 0) {
     html = '<p id="game-list">No games</p>'
   } else {
-    html = getDynamicGameListHtml(game)
+    html = getDynamicGameListHtml(games)
   }
   // console.log('html', html)
   $('#board').hide()
@@ -63,7 +63,7 @@ const onGetGameListFail = (response) => {
 }
 
 const getDynamicGameListHtml = (games) => {
-  let html = '<table>'
+  let html = '<table id="game-list">'
   for (let rowCounter = 0; rowCounter < games.length; rowCounter++) {
     const game = games[rowCounter]
     const cellArray = game.cells
