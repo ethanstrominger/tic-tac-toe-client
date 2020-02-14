@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <h1>Welcome to Tic Tac Toe</h1>
+      <div id="home" class="home">
+        <div id="buttons-when-signed-out" class="view" style="margin: 0; padding: 0">
+          <button id="sign-in-button" class="btn btn-primary btn-large button">Sign In</button>
+          <button id="sign-up-button" class="btn btn-primary btn-large button">Sign Up</button>
+        </div>
+        <div id="buttons-when-signed-in" style="display: None" class="view">
+          <button id="sign-out-button" class="btn btn-primary btn-large button">Sign Out</button>
+          <button id="change-password-button" class="btn btn-primary btn-large button">Change Pasword</button>
+          <button id="play-game-button" class="btn btn-primary btn-large button">New Game</button>
+          <button id="get-stats-button" class="btn btn-primary btn-large button">Get Stats</button>
+          <button id="game-list-button" class="btn btn-primary btn-large button">Game List</button>
+        </div>
+      </div>
+      <div id="message" class="view info"></div>
+      <div id="stats" class="view info"></div>
+      <form id="sign-up-form" class="view form" style="display: None">
+        <label for="email">Email</label>
+        <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
+        <label for="password">Password</label>
+        <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
+        <label for="password_confirmation">Confirm Password</label>
+        <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm password">
+        <input type="submit" value="Sign Up" class="btn btn-primary btn-large button">
+      </form>
+      <form id="sign-in-form" class="view form" style="display: none">
+        <label for="email">Email</label>
+        <input name="credentials[email]" class="form-control" type="text" placeholder="an@example.com">
+        <label for="password">Password</label>
+        <input name="credentials[password]" class="form-control" type="password" placeholder="Enter password">
+        <input type="submit" value="Sign In" class="btn btn-primary btn-large button">
+      </form>
+      <form id="change-password-form" class="view form" style="display: None">
+        <label for="old">Old Password</label>
+        <input name="passwords[old]" type="password" class="form-control" placeholder="Enter old password">
+        <label for="new">New Password</label>
+        <input name="passwords[new]" type="password" class="form-control" placeholder="Enter new password">
+        <input type="submit" value="Change Password" class="btn btn-primary btn-large button">
+      </form>
+      <div id="board" class="board view" style="display: None">
+        <div class="row">
+          <div id="cell0" class="cell row-top column-left"></div>
+          <div id="cell1" class="cell row-top"></div>
+          <div id="cell2" class="cell row-top column-right"></div>
+        </div>
+        <div class="row">
+          <div id="cell3" class="cell column-left"></div>
+          <div id="cell4" class="cell"></div>
+          <div id="cell5" class="cell column-right"></div>
+        </div>
+        <div class="row">
+          <div id="cell6" class="cell row-bottom column-left"></div>
+          <div id="cell7" class="cell row-bottom"></div>
+          <div id="cell8" class="cell row-bottom column-right"></div>
+        </div>
+      </div>
+      <div id="list-of-games"></div>
+    </body>
+</html>
